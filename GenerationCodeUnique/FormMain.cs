@@ -32,10 +32,6 @@ namespace GenerationCodeUnique
                 "l",
                 "I"
             };
-
-      string voyelles = "aeiouy";
-      string consonnes = "abcdfghjklmnpqrstuvwxz";
-
       do
       {
         result = GenerateRandomCharacters(8, ListCaracteres);
@@ -339,17 +335,29 @@ namespace GenerationCodeUnique
 
     private void ButtonGenerateSequence_Click(object sender, EventArgs e)
     {
-      listBoxSequence.Items.Clear();
-      foreach (var item in GenerateSequence())
-      {
-        listBoxSequence.Items.Add(item);
-      }
+      listBoxSequence.Items.Add(GenerateSequence());
     }
 
-    private IEnumerable<string> GenerateSequence()
+    private string GenerateSequence()
     {
-      IEnumerable<string> result = new List<string>();
+      string result = string.Empty;
+      List<string> voyelles = new List<string> { "a", "e", "i", "o", "u", "y" };
+      List<string> consonnes = new List<string> { "a", "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "u", "v", "w", "x", "z" };
+      List<string> forbiddenCaracteres = new List<string> { "0", "1", "l", "I" };
+      do
+      {
+        result += GenerateRandomCharacters(2, consonnes);
+      } while (!IsAcceptable(result, 1, 8, forbiddenCaracteres));
 
+      do
+      {
+        result += GenerateRandomCharacters(2, voyelles);
+      } while (!IsAcceptable(result, 1, 8, forbiddenCaracteres));
+
+      do
+      {
+        result += GenerateRandomCharacters(2, consonnes);
+      } while (!IsAcceptable(result, 1, 8, forbiddenCaracteres));
 
       return result;
     }
