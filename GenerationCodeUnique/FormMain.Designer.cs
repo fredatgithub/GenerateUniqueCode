@@ -33,6 +33,8 @@
             this.labelCodeTiers = new System.Windows.Forms.Label();
             this.buttonGenerateSequence = new System.Windows.Forms.Button();
             this.listBoxSequence = new System.Windows.Forms.ListBox();
+            this.buttonSequenceSuivie = new System.Windows.Forms.Button();
+            this.listBoxSequenceSuivie = new System.Windows.Forms.ListBox();
             this.SuspendLayout();
             // 
             // buttonGenererCodeTiers
@@ -79,11 +81,31 @@
             this.listBoxSequence.Size = new System.Drawing.Size(151, 420);
             this.listBoxSequence.TabIndex = 4;
             // 
+            // buttonSequenceSuivie
+            // 
+            this.buttonSequenceSuivie.Location = new System.Drawing.Point(387, 52);
+            this.buttonSequenceSuivie.Name = "buttonSequenceSuivie";
+            this.buttonSequenceSuivie.Size = new System.Drawing.Size(151, 23);
+            this.buttonSequenceSuivie.TabIndex = 5;
+            this.buttonSequenceSuivie.Text = "séquence suivie";
+            this.buttonSequenceSuivie.UseVisualStyleBackColor = true;
+            this.buttonSequenceSuivie.Click += new System.EventHandler(this.buttonSequenceSuivie_Click);
+            // 
+            // listBoxSequenceSuivie
+            // 
+            this.listBoxSequenceSuivie.FormattingEnabled = true;
+            this.listBoxSequenceSuivie.Location = new System.Drawing.Point(544, 52);
+            this.listBoxSequenceSuivie.Name = "listBoxSequenceSuivie";
+            this.listBoxSequenceSuivie.Size = new System.Drawing.Size(151, 420);
+            this.listBoxSequenceSuivie.TabIndex = 6;
+            // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(508, 558);
+            this.ClientSize = new System.Drawing.Size(739, 558);
+            this.Controls.Add(this.listBoxSequenceSuivie);
+            this.Controls.Add(this.buttonSequenceSuivie);
             this.Controls.Add(this.listBoxSequence);
             this.Controls.Add(this.buttonGenerateSequence);
             this.Controls.Add(this.labelCodeTiers);
@@ -103,6 +125,8 @@
         private System.Windows.Forms.Label labelCodeTiers;
         private System.Windows.Forms.Button buttonGenerateSequence;
         private System.Windows.Forms.ListBox listBoxSequence;
+        private System.Windows.Forms.Button buttonSequenceSuivie;
+        private System.Windows.Forms.ListBox listBoxSequenceSuivie;
     }
 }
 
