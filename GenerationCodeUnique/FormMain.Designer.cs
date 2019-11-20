@@ -89,7 +89,7 @@
             this.buttonSequenceSuivie.TabIndex = 5;
             this.buttonSequenceSuivie.Text = "séquence suivie";
             this.buttonSequenceSuivie.UseVisualStyleBackColor = true;
-            this.buttonSequenceSuivie.Click += new System.EventHandler(this.buttonSequenceSuivie_Click);
+            this.buttonSequenceSuivie.Click += new System.EventHandler(this.ButtonSequenceSuivie_Click);
             // 
             // listBoxSequenceSuivie
             // 
