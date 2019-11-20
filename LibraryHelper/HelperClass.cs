@@ -20,7 +20,7 @@ namespace LibraryHelper
             char nextFirstChar = GetNextSymbol(firstChar);
             result = letters.Substring(0, letters.Length - 1) + GetNextSymbol(firstChar);
             // test if GetNextSymbol(firstChar) == '0' or 'a' or 'A' then GetNextSymbol(secondChar)
-            if (letters.Length >= 2 && (nextFirstChar == 'a' || nextFirstChar == 'A' || nextFirstChar == '0'))
+            if (letters.Length >= 2 && (nextFirstChar.ToString().ToUpper()[0] == 'A' || nextFirstChar == '0'))
             {
                 char secondCharacter = letters.Reverse().ToArray()[1];
                 char nextSecondCharacter = GetNextSymbol(secondCharacter);
