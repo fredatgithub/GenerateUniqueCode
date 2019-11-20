@@ -7,12 +7,26 @@ namespace LibraryHelper
 {
     public static class HelperClass
     {
-        public static string GenerateNextItem(string firstElement)
+        public static string GenerateNextItem(string letters)
         {
+            if (letters.Trim() == string.Empty || letters.Length == 0)
+            {
+                return string.Empty;
+            }
+
+            int numberOfLetter = letters.Length;
             string result = string.Empty;
-            char firstChar = firstElement[firstElement.Length - 1];
+            char firstChar = letters[letters.Length - 1];
+            char nextFirstChar = GetNextSymbol(firstChar);
+            result = letters.Substring(0, letters.Length - 1) + GetNextSymbol(firstChar);
             // test if GetNextSymbol(firstChar) == '0' or 'a' or 'A' then GetNextSymbol(secondChar)
-            result = firstElement.Substring(0, firstElement.Length - 1) + GetNextSymbol(firstChar);
+            if (letters.Length >= 2 && (nextFirstChar == 'a' || nextFirstChar == 'A' || nextFirstChar == '0'))
+            {
+                char secondCharacter = letters.Reverse().ToArray()[1];
+                char nextSecondCharacter = GetNextSymbol(secondCharacter);
+                result = letters.Substring(0, letters.Length - 2) + nextSecondCharacter + nextFirstChar;
+            }
+
             return result;
         }
 
