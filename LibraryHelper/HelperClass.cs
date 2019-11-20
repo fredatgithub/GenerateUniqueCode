@@ -1,6 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.IO;
 using System.Linq;
 using System.Security.Cryptography;
 
@@ -93,7 +92,7 @@ namespace LibraryHelper
         public static string GenerateCode(int numberOfCharacters, List<string> listOfCharacters, List<string> forbiddenCharacters)
         {
             string result = string.Empty;
-            
+
             do
             {
                 result = GenerateRandomCharacters(numberOfCharacters, listOfCharacters);
@@ -158,33 +157,6 @@ namespace LibraryHelper
             }
 
             return resultAcceptable;
-        }
-
-        public static string GenerateUniqueFilename(string directoryPath, RandomCharacters rdnCharacters = RandomCharacters.LowerCase, byte length = 8, bool withFileExtension = false, string fileExtension = "txt")
-        {
-            if (directoryPath == string.Empty)
-            {
-                return string.Empty;
-            }
-
-            if (!Directory.Exists(directoryPath))
-            {
-                return string.Empty;
-            }
-
-            string result = string.Empty;
-
-            do
-            {
-                result = GenerateRandomString(new[] { ' ' }, true, rdnCharacters, length, true);
-                if (withFileExtension)
-                {
-                    result += "." + fileExtension;
-                }
-
-            } while (File.Exists(Path.Combine(directoryPath, result)));
-
-            return result;
         }
 
         public static string GenerateRandomLongString(char[] forbiddenCharacters, bool hasForbiddenCharacters = false, RandomCharacters rdnCharacters = RandomCharacters.LowerCase, int length = 8, bool isWindowsFileName = false)

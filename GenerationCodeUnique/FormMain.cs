@@ -28,14 +28,10 @@ namespace GenerationCodeUnique
             textBoxCodeTiers.Text =HelperClass.GenerateCode(8, ListCaracteres, forbiddenCaracteres);
         }
 
-        
-
         private void ButtonGenerateSequence_Click(object sender, EventArgs e)
         {
             listBoxSequence.Items.Add(HelperClass.GenerateSequence());
         }
-
-        
 
         private void ButtonSequenceSuivie_Click(object sender, EventArgs e)
         {
@@ -53,9 +49,6 @@ namespace GenerationCodeUnique
             listBoxSequenceSuivie.Items.Add(premierElement);
             string deuxiemeElement = HelperClass.GenerateNextItem(premierElement);
             listBoxSequenceSuivie.Items.Add(deuxiemeElement);
-
         }
-
-        
     }
 }
