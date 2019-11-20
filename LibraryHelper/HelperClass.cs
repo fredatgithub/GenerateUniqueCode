@@ -90,23 +90,14 @@ namespace LibraryHelper
             return result;
         }
 
-        public static string GenerateCode()
+        public static string GenerateCode(int numberOfCharacters, List<string> listOfCharacters, List<string> forbiddenCharacters)
         {
             string result = string.Empty;
-            List<string> ListCaracteres = new List<string>();
-            ListCaracteres.AddRange(AddNumbers());
-            ListCaracteres.AddRange(AddCharacters());
-            List<string> forbiddenCaracteres = new List<string>
-            {
-                "0",
-                "1",
-                "l",
-                "I"
-            };
+            
             do
             {
-                result = GenerateRandomCharacters(8, ListCaracteres);
-            } while (!IsAcceptable(result, 1, 8, forbiddenCaracteres));
+                result = GenerateRandomCharacters(numberOfCharacters, listOfCharacters);
+            } while (!IsAcceptable(result, 1, numberOfCharacters, forbiddenCharacters));
 
             return result;
         }
