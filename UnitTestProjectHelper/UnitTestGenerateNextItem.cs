@@ -326,7 +326,7 @@ namespace UnitTestProjectHelper
         public void TestMethod_GenerateNextItem_z()
         {
             string source = "z";
-            string expected = "a";
+            string expected = "0";
             string result = HelperClass.GenerateNextItem(source);
             Assert.AreEqual(result, expected);
         }
@@ -587,7 +587,7 @@ namespace UnitTestProjectHelper
         public void TestMethod_GenerateNextItem_az()
         {
             string source = "az";
-            string expected = "B0";
+            string expected = "a0";
             string result = HelperClass.GenerateNextItem(source);
             Assert.AreEqual(result, expected);
         }
@@ -596,7 +596,7 @@ namespace UnitTestProjectHelper
         public void TestMethod_GenerateNextItem_AZ()
         {
             string source = "AZ";
-            string expected = "B0";
+            string expected = "A0";
             string result = HelperClass.GenerateNextItem(source);
             Assert.AreEqual(result, expected);
         }
