@@ -78,7 +78,7 @@
             this.listBoxSequence.FormattingEnabled = true;
             this.listBoxSequence.Location = new System.Drawing.Point(46, 106);
             this.listBoxSequence.Name = "listBoxSequence";
-            this.listBoxSequence.Size = new System.Drawing.Size(151, 420);
+            this.listBoxSequence.Size = new System.Drawing.Size(151, 225);
             this.listBoxSequence.TabIndex = 4;
             // 
             // buttonSequenceSuivie
@@ -96,7 +96,7 @@
             this.listBoxSequenceSuivie.FormattingEnabled = true;
             this.listBoxSequenceSuivie.Location = new System.Drawing.Point(544, 52);
             this.listBoxSequenceSuivie.Name = "listBoxSequenceSuivie";
-            this.listBoxSequenceSuivie.Size = new System.Drawing.Size(151, 420);
+            this.listBoxSequenceSuivie.Size = new System.Drawing.Size(151, 277);
             this.listBoxSequenceSuivie.TabIndex = 6;
             // 
             // FormMain

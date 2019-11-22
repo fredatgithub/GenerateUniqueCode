@@ -20,8 +20,17 @@ namespace LibraryHelper
             char nextFirstChar = GetNextSymbol(firstChar);
             result = letters.Substring(0, letters.Length - 1) + GetNextSymbol(firstChar);
             // test if GetNextSymbol(firstChar) == '0' or 'a' or 'A' then GetNextSymbol(secondChar)
-            if (letters.Length >= 2 && (nextFirstChar.ToString().ToUpper()[0] == 'A' || nextFirstChar == '0'))
+            // nextFirstChar.ToString().ToUpper()[0] == 'A' ||
+            if (letters.Length >= 2 && ( nextFirstChar == '9'))
             {
+                char secondCharacter = letters.Reverse().ToArray()[1];
+                char nextSecondCharacter = GetNextSymbol(secondCharacter);
+                result = letters.Substring(0, letters.Length - 2) + nextSecondCharacter + nextFirstChar;
+            }
+
+            if (letters.Length >= 3 && (nextFirstChar.ToString().ToUpper()[0] == 'A' || nextFirstChar == '0'))
+            {
+                char characterNumberThree = letters.Reverse().ToArray()[2];
                 char secondCharacter = letters.Reverse().ToArray()[1];
                 char nextSecondCharacter = GetNextSymbol(secondCharacter);
                 result = letters.Substring(0, letters.Length - 2) + nextSecondCharacter + nextFirstChar;
@@ -32,7 +41,7 @@ namespace LibraryHelper
 
         public static char GetNextSymbol(char firstChar)
         {
-            char result = char.MinValue;
+            char result;
             if (char.IsLetter(firstChar))
             {
                 result = GetNextLetter(firstChar);
@@ -40,6 +49,10 @@ namespace LibraryHelper
             else if (char.IsNumber(firstChar))
             {
                 result = GetNextNumber(firstChar);
+            }
+            else
+            {
+                result = firstChar;
             }
 
             return result;
@@ -50,11 +63,15 @@ namespace LibraryHelper
             char nextChar;
             if (letter == 'z')
             {
-                nextChar = 'a';
+                nextChar = '0';
             }
             else if (letter == 'Z')
             {
-                nextChar = 'A';
+                nextChar = '0';
+            }
+            else if (letter == '9')
+            {
+                nextChar = 'a';
             }
             else
             {

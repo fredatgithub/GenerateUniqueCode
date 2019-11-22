@@ -235,7 +235,7 @@ namespace UnitTestProjectHelper
         public void TestMethod_GetNextLetter_z()
         {
             char source = 'z';
-            char expected = 'a';
+            char expected = '0';
             char result = HelperClass.GetNextLetter(source);
             Assert.AreEqual(result, expected);
         }
@@ -469,7 +469,7 @@ namespace UnitTestProjectHelper
         public void TestMethod_GetNextLetter_Z()
         {
             char source = 'Z';
-            char expected = 'A';
+            char expected = '0';
             char result = HelperClass.GetNextLetter(source);
             Assert.AreEqual(result, expected);
         }
