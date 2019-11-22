@@ -560,7 +560,7 @@ namespace UnitTestProjectHelper
         public void TestMethod_GetNextLetter_9()
         {
             char source = '9';
-            char expected = ':';
+            char expected = 'A';
             char result = HelperClass.GetNextLetter(source);
             Assert.AreEqual(result, expected);
         }

@@ -21,7 +21,7 @@ namespace LibraryHelper
             result = letters.Substring(0, letters.Length - 1) + GetNextSymbol(firstChar);
             // test if GetNextSymbol(firstChar) == '0' or 'a' or 'A' then GetNextSymbol(secondChar)
             // nextFirstChar.ToString().ToUpper()[0] == 'A' ||
-            if (letters.Length >= 2 && ( nextFirstChar == '9'))
+            if (letters.Length >= 2 && ( nextFirstChar == '0'))
             {
                 char secondCharacter = letters.Reverse().ToArray()[1];
                 char nextSecondCharacter = GetNextSymbol(secondCharacter);
@@ -71,7 +71,7 @@ namespace LibraryHelper
             }
             else if (letter == '9')
             {
-                nextChar = 'a';
+                nextChar = 'A';
             }
             else
             {
