@@ -19,9 +19,7 @@ namespace LibraryHelper
             char firstChar = letters[letters.Length - 1];
             char nextFirstChar = GetNextSymbol(firstChar);
             result = letters.Substring(0, letters.Length - 1) + GetNextSymbol(firstChar);
-            // test if GetNextSymbol(firstChar) == '0' or 'a' or 'A' then GetNextSymbol(secondChar)
-            // nextFirstChar.ToString().ToUpper()[0] == 'A' ||
-            if (letters.Length >= 2 && ( nextFirstChar == 'A'))
+            if (letters.Length >= 2 && (nextFirstChar == 'A'))
             {
                 char secondCharacter = letters.Reverse().ToArray()[1];
                 char nextSecondCharacter = GetNextSymbol(secondCharacter);
@@ -35,6 +33,17 @@ namespace LibraryHelper
                 char secondCharacter = letters.Reverse().ToArray()[1];
                 char nextSecondCharacter = GetNextSymbol(secondCharacter);
                 result = letters.Substring(0, letters.Length - 3) + nextcharacterNumberThree + nextSecondCharacter + nextFirstChar;
+            }
+
+            if (letters.Length >= 4 && (nextFirstChar.ToString().ToUpper()[0] == 'A' || nextFirstChar == 'A'))
+            {
+                char characterNumberFour = letters.Reverse().ToArray()[3];
+                char nextcharacterNumberFour = GetNextSymbol(characterNumberFour);
+                char characterNumberThree = letters.Reverse().ToArray()[2];
+                char nextcharacterNumberThree = GetNextSymbol(characterNumberThree);
+                char secondCharacter = letters.Reverse().ToArray()[1];
+                char nextSecondCharacter = GetNextSymbol(secondCharacter);
+                result = letters.Substring(0, letters.Length - 4) + nextcharacterNumberFour + nextcharacterNumberThree + nextSecondCharacter + nextFirstChar;
             }
 
             return result;
