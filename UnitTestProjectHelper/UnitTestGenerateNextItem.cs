@@ -627,5 +627,14 @@ namespace UnitTestProjectHelper
             string result = HelperClass.GenerateNextItem(source);
             Assert.AreEqual(result, expected);
         }
+
+        [TestMethod]
+        public void TestMethod_GenerateNextItem_A99()
+        {
+            string source = "A99";
+            string expected = "BAA";
+            string result = HelperClass.GenerateNextItem(source);
+            Assert.AreEqual(result, expected);
+        }
     }
 }
