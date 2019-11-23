@@ -87,7 +87,7 @@ namespace LibraryHelper
             char nextNumber;
             if (number == '9')
             {
-                nextNumber = '0';
+                nextNumber = 'A';
             }
             else
             {

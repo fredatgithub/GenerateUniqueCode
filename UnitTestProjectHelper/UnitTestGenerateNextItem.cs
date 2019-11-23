@@ -92,7 +92,7 @@ namespace UnitTestProjectHelper
         public void TestMethod_GenerateNextItem_9()
         {
             string source = "9";
-            string expected = "0";
+            string expected = "A";
             string result = HelperClass.GenerateNextItem(source);
             Assert.AreEqual(result, expected);
         }
@@ -605,7 +605,7 @@ namespace UnitTestProjectHelper
         public void TestMethod_GenerateNextItem_19()
         {
             string source = "19";
-            string expected = "20";
+            string expected = "2A";
             string result = HelperClass.GenerateNextItem(source);
             Assert.AreEqual(result, expected);
         }

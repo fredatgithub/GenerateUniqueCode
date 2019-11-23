@@ -92,7 +92,7 @@ namespace UnitTestProjectHelper
         public void TestMethod_GetNextNumber_9()
         {
             char source = '9';
-            char expected = '0';
+            char expected = 'A';
             char result = HelperClass.GetNextNumber(source);
             Assert.AreEqual(result, expected);
         }
