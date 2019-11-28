@@ -50,6 +50,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="UnitTestGenerateNextItem.cs" />
+    <Compile Include="UnitTestGenerateSequence.cs" />
     <Compile Include="UnitTestGetNextNumber.cs" />
     <Compile Include="UnitTestGetNextLetter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

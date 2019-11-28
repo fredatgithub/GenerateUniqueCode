@@ -110,7 +110,7 @@ namespace LibraryHelper
         {
             string result = string.Empty;
             List<string> voyelles = new List<string> { "a", "e", "i", "o", "u", "y" };
-            List<string> consonnes = new List<string> { "a", "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "u", "v", "w", "x", "z" };
+            List<string> consonnes = new List<string> { "b", "c", "d", "f", "g", "h", "j", "k", "l", "m", "n", "p", "q", "r", "s", "t", "v", "w", "x", "z" };
             List<string> forbiddenCaracteres = new List<string> { "0", "1", "l", "I" };
             do
             {
