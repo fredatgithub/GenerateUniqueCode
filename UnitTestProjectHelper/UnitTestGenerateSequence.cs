@@ -11,9 +11,6 @@ namespace UnitTestProjectHelper
     {
       string result = HelperClass.GenerateSequence();
       Assert.IsTrue(result.Length > 0);
-
     }
-
-
   }
 }
