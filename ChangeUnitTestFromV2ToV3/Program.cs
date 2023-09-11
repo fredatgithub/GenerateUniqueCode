@@ -1,5 +1,4 @@
-﻿
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.IO;
 
@@ -9,13 +8,15 @@ namespace ChangeUnitTestFromV2ToV3
   {
     static void Main()
     {
-      string filename = @"..\..\..\UnitTestProjectHelper\UnitTestGenerateNextItem.cs";
+      string unitTestClassFilename = "UnitTestGetNextLetter.cs";
+      string filename = $@"..\..\..\UnitTestProjectHelper\{unitTestClassFilename}";
+      char separator = '\'';
       var fileContent = new List<string>();
       fileContent = ReadFile(filename);
-      fileContent = KeepPattern(fileContent, "string source = ");
+      fileContent = KeepPattern(fileContent, "char source = ", separator);
       var listOfTests = new List<string>();
-      listOfTests = GenerateUnitTests(fileContent);
-      WriteFile(listOfTests, "UnitTests.txt");
+      listOfTests = GenerateUnitTests(fileContent, separator);
+      WriteFile(listOfTests, "UnitTests-letter.txt");
       Console.WriteLine("Le fichier UnitTests.txt a été écrit.");
       Console.WriteLine("Press any key to exit:");
       Console.ReadKey();
@@ -38,19 +39,19 @@ namespace ChangeUnitTestFromV2ToV3
       }
     }
 
-    private static List<string> GenerateUnitTests(List<string> fileContent)
+    private static List<string> GenerateUnitTests(List<string> fileContent, char separator)
     {
       var result = new List<string>();
       for (int i = 0; i < fileContent.Count; i += 2)
       {
         //[DataRow("AZZ", "AZ0")]
-        result.Add($"[DataRow(\"{fileContent[i]}\", \"{fileContent[i + 1]}\")]");
+        result.Add($"[DataRow({separator}{fileContent[i]}{separator}, {separator}{fileContent[i + 1]}{separator})]");
       }
 
       return result;
     }
 
-    private static List<string> KeepPattern(List<string> fileContent, string pattern)
+    private static List<string> KeepPattern(List<string> fileContent, string pattern, char separator)
     {
       var result = new List<string>();
       for (int i = 0; i < fileContent.Count; i++)
@@ -58,14 +59,14 @@ namespace ChangeUnitTestFromV2ToV3
         if (fileContent[i].Trim().StartsWith(pattern))
         {
           string lineA = fileContent[i];
-          string lineB = fileContent[i+1];
-          string line1 = fileContent[i].Trim().Split('"')[1];
-          string line2 = fileContent[i + 1].Trim().Split('"')[1];
+          string lineB = fileContent[i + 1];
+          string line1 = fileContent[i].Trim().Split(separator)[1];
+          string line2 = fileContent[i + 1].Trim().Split(separator)[1];
           result.Add(line1);
           result.Add(line2);
         }
       }
-      
+
       return result;
     }
 
@@ -79,8 +80,8 @@ namespace ChangeUnitTestFromV2ToV3
           var line = string.Empty;
           while ((line = sr.ReadLine()) != null)
           {
-            if (!string.IsNullOrEmpty(line)) 
-            result.Add(line);
+            if (!string.IsNullOrEmpty(line))
+              result.Add(line);
           }
         }
       }
